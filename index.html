@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Diet Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="p-4 md:p-8">
+    <div class="container mx-auto">
+        <header class="text-center mb-8 md:mb-12 relative">
+            <h1 class="text-3xl md:text-4xl">Diet Planner</h1>
+            <p class="text-md md:text-lg mt-1">Check your meals and snacks.</p>
+            <button id="darkModeToggle" aria-label="Toggle dark mode" class="absolute top-0 right-0 mt-1 mr-1 md:mt-2 md:mr-2 p-2.5 rounded-lg focus:outline-none focus:ring-2 ring-opacity-50 text-xl">
+                🌙
+            </button>
+        </header>
+
+        <div class="control-panel p-5 md:p-6 mb-8 space-y-5">
+            <div>
+                <label for="daySelector" class="block mb-1.5">Select a Day:</label>
+                <select id="daySelector" class="w-full">
+                    <option value="lunes">Monday</option>
+                    <option value="martes">Tuesday</option>
+                    <option value="miercoles">Wednesday</option>
+                    <option value="jueves">Thursday</option>
+                    <option value="viernes">Friday</option>
+                    <option value="sabado">Saturday</option>
+                    <option value="domingo">Sunday</option>
+                </select>
+            </div>
+            <div>
+                <label class="block mb-1.5">Meal Time:</label>
+                <div id="mealTypeButtons" class="grid grid-cols-3 gap-2.5">
+                    <button data-meal="desayuno" class="meal-type-btn">Breakfast</button>
+                    <button data-meal="almuerzo" class="meal-type-btn">Lunch</button>
+                    <button data-meal="cena" class="meal-type-btn">Dinner</button>
+                </div>
+            </div>
+            <div>
+                <button id="showMeriendasBtn" class="w-full font-semibold">
+                    View All Snacks
+                </button>
+            </div>
+        </div>
+
+        <div id="mealResult" class="mb-8">
+        </div>
+
+        <div id="meriendasContainer" class="hidden">
+            <h2 class="text-2xl font-bold mb-6 text-center">All Snack Options</h2>
+            <div id="meriendaFilterControls" class="mb-6 flex flex-wrap justify-center items-center gap-2 md:gap-3">
+                <button data-filter="all" class="merienda-filter-btn active">All</button>
+                <button data-filter="am" class="merienda-filter-btn">AM</button>
+                <button data-filter="pm" class="merienda-filter-btn">PM</button>
+            </div>
+            <div id="meriendasList">
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-line">
+                <span>Developed by Carlos Hernández</span>
+                <span class="footer-separator">·</span>
+                <a href="https://github.com/carloshdez90/meal_planner" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            </div>
+            <div class="footer-line">
+                <span>Crafted with the help of Gemini</span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

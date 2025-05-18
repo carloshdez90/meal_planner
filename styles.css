@@ -1,0 +1,444 @@
+/* 
+ * Diet Planner Application Styles
+ * 
+ * This stylesheet contains all the styling for the Diet Planner application.
+ * It includes:
+ * - Color variables for light and dark modes
+ * - Layout and container styles
+ * - Component styles (header, control panel, meal cards, etc.)
+ * - Dark mode specific styles
+ * - Responsive design adjustments
+ */
+
+/* Color Variables */
+:root {
+    /* Light Mode Colors */
+    --color-lavender: #8B82D0;
+    --color-dark-purple: #5F47BC;
+    --color-pink: #FFAED4;
+    --color-peach: #FFC392;
+    --color-gold: #FFD376;
+    --color-light-blue: #9ADCF1;
+    --color-text-dark: #2D2A5A;
+    --color-text-light: #6B61A2;
+    --color-bg-light: #FFFFFF;
+    --color-bg-accent: #EAE7FF;
+    --color-body-bg: #F8F7FF;
+    --color-body-text: #333333;
+    --color-shadow-light: rgba(95, 71, 188, 0.1);
+    --color-shadow-medium: rgba(139, 130, 208, 0.15);
+    --color-shadow-dark: rgba(139, 130, 208, 0.2);
+    --color-plan-tag-octubre-text: #6d380c;
+    --color-plan-tag-noviembre-text: #0c4a6e;
+    --color-plan-tag-febrero-text: #831843;
+    --color-plan-tag-merienda-text: #78350f;
+    --color-footer-text: #6B61A2;
+    --color-footer-link: #5F47BC;
+    --color-footer-separator: #D1D5DB;
+
+    /* Dark Mode Colors */
+    --dm-color-lavender: #A09CCF;
+    --dm-color-dark-purple: #8B82D0;
+    --dm-color-pink: #FFC2E8;
+    --dm-color-peach: #FFD1A6;
+    --dm-color-gold: #FFE08A;
+    --dm-color-light-blue: #AEDFF7;
+    --dm-color-text-dark: #D0C9FF;
+    --dm-color-text-light: #A09CCF;
+    --dm-color-bg-light: #1F1C3A;
+    --dm-color-bg-accent: #2D2A5A;
+    --dm-color-body-bg: #161429;
+    --dm-color-body-text: #E0E0FF;
+    --dm-color-border: #4A457F;
+    --dm-color-shadow-light: rgba(0, 0, 0, 0.2);
+    --dm-color-shadow-medium: rgba(0, 0, 0, 0.3);
+    --dm-color-shadow-dark: rgba(200, 200, 255, 0.1);
+    --dm-plan-tag-octubre-text: #1F1C3A;
+    --dm-plan-tag-noviembre-text: #1F1C3A;
+    --dm-plan-tag-febrero-text: #1F1C3A;
+    --dm-plan-tag-merienda-text: #1F1C3A;
+    --dm-color-footer-text: #A09CCF;
+    --dm-color-footer-link: #B8B2E0;
+    --dm-color-footer-separator: #4B5563;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--color-body-bg);
+    color: var(--color-body-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --color-lavender: var(--dm-color-lavender);
+    --color-dark-purple: var(--dm-color-dark-purple);
+    --color-pink: var(--dm-color-pink);
+    --color-peach: var(--dm-color-peach);
+    --color-gold: var(--dm-color-gold);
+    --color-light-blue: var(--dm-color-light-blue);
+    --color-text-dark: var(--dm-color-text-dark);
+    --color-text-light: var(--dm-color-text-light);
+    --color-bg-light: var(--dm-color-bg-accent);
+    --color-bg-accent: var(--dm-color-bg-light);
+    --color-body-bg: var(--dm-color-body-bg);
+    --color-body-text: var(--dm-color-body-text);
+    --color-shadow-light: var(--dm-color-shadow-light);
+    --color-shadow-medium: var(--dm-color-shadow-medium);
+    --color-shadow-dark: var(--dm-color-shadow-dark);
+    --color-plan-tag-octubre-text: var(--dm-plan-tag-octubre-text);
+    --color-plan-tag-noviembre-text: var(--dm-plan-tag-noviembre-text);
+    --color-plan-tag-febrero-text: var(--dm-plan-tag-febrero-text);
+    --color-plan-tag-merienda-text: var(--dm-plan-tag-merienda-text);
+    --color-footer-text: var(--dm-color-footer-text);
+    --color-footer-link: var(--dm-color-footer-link);
+    --color-footer-separator: var(--dm-color-footer-separator);
+}
+
+/* Layout */
+.container {
+    max-width: 700px;
+    flex-grow: 1;
+}
+
+/* Header Styles */
+header h1 {
+    color: var(--color-dark-purple);
+    font-weight: 900;
+}
+
+header p {
+    color: var(--color-lavender);
+}
+
+#darkModeToggle {
+    background-color: var(--color-bg-accent);
+    color: var(--color-dark-purple);
+    border: 1px solid var(--color-lavender);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background-color: var(--color-lavender);
+    color: var(--color-bg-light);
+}
+
+body.dark-mode #darkModeToggle {
+    background-color: var(--dm-color-bg-accent);
+    color: var(--dm-color-text-dark);
+    border: 1px solid var(--dm-color-border);
+}
+
+body.dark-mode #darkModeToggle:hover {
+    background-color: var(--dm-color-lavender);
+    color: var(--dm-color-bg-light);
+}
+
+/* Control Panel Styles */
+.control-panel {
+    background-color: var(--color-bg-light);
+    box-shadow: 0 8px 25px var(--color-shadow-light);
+    border-radius: 16px;
+}
+
+.control-panel label {
+    color: var(--color-text-dark);
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.control-panel select,
+.control-panel button {
+    border: 1px solid var(--color-lavender);
+    background-color: var(--color-bg-accent);
+    color: var(--color-text-dark);
+    border-radius: 10px;
+    padding: 0.85rem 1.15rem;
+    font-size: 0.9rem;
+    transition: all 0.2s ease-in-out;
+}
+
+body.dark-mode .control-panel select,
+body.dark-mode .control-panel button {
+    background-color: var(--dm-color-bg-light);
+    border-color: var(--dm-color-border);
+    color: var(--dm-color-text-dark);
+}
+
+.control-panel select:focus,
+.control-panel button:focus {
+    border-color: var(--color-dark-purple);
+    box-shadow: 0 0 0 3px var(--color-shadow-light);
+}
+
+body.dark-mode .control-panel select:focus,
+body.dark-mode .control-panel button:focus {
+    border-color: var(--dm-color-dark-purple);
+    box-shadow: 0 0 0 3px var(--dm-color-shadow-dark);
+}
+
+/* Meal Type Buttons */
+.meal-type-btn {
+    background-color: var(--color-bg-accent);
+    color: var(--color-lavender);
+    border: 1px solid var(--color-bg-accent);
+    font-weight: 700;
+}
+
+.meal-type-btn:hover {
+    background-color: var(--color-lavender);
+    color: var(--color-bg-light);
+    border-color: var(--color-lavender);
+}
+
+.meal-type-btn.active {
+    background-color: var(--color-dark-purple);
+    color: var(--color-bg-light);
+    border-color: var(--color-dark-purple);
+}
+
+body.dark-mode .meal-type-btn {
+    background-color: var(--dm-color-bg-light);
+    color: var(--dm-color-lavender);
+    border-color: var(--dm-color-bg-light);
+}
+
+body.dark-mode .meal-type-btn:hover {
+    background-color: var(--dm-color-lavender);
+    color: var(--dm-color-bg-light);
+    border-color: var(--dm-color-lavender);
+}
+
+body.dark-mode .meal-type-btn.active {
+    background-color: var(--dm-color-dark-purple);
+    color: var(--dm-color-bg-light);
+    border-color: var(--dm-color-dark-purple);
+}
+
+/* Show Meriendas Button & Merienda Filter Buttons */
+#showMeriendasBtn,
+.merienda-filter-btn {
+    background-color: var(--color-gold);
+    color: var(--color-text-dark);
+    border: 1px solid var(--color-gold);
+    font-weight: 700;
+}
+
+#showMeriendasBtn:hover,
+.merienda-filter-btn:hover {
+    background-color: #F0C060;
+    border-color: #E0B050;
+}
+
+body.dark-mode #showMeriendasBtn,
+body.dark-mode .merienda-filter-btn {
+    background-color: var(--dm-color-gold);
+    color: var(--dm-color-bg-light);
+    border-color: var(--dm-color-gold);
+}
+
+body.dark-mode #showMeriendasBtn:hover,
+body.dark-mode .merienda-filter-btn:hover {
+    background-color: #EAB308;
+    border-color: #D99E02;
+}
+
+.merienda-filter-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+}
+
+.merienda-filter-btn:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.merienda-filter-btn:focus {
+    outline: none;
+}
+
+.merienda-filter-btn.active {
+    background-color: var(--color-dark-purple);
+    color: var(--color-bg-light);
+    border-color: var(--color-dark-purple);
+    box-shadow: 0 2px 5px var(--color-shadow-dark);
+}
+
+body.dark-mode .merienda-filter-btn.active {
+    background-color: var(--dm-color-dark-purple);
+    color: var(--dm-color-bg-light);
+    border-color: var(--dm-color-dark-purple);
+    box-shadow: 0 2px 5px var(--dm-color-shadow-dark);
+}
+
+/* Meal Cards */
+.meal-card {
+    background-color: var(--color-bg-light);
+    box-shadow: 0 6px 20px var(--color-shadow-medium);
+    margin-bottom: 1.25rem;
+    border-radius: 16px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-left-width: 6px;
+}
+
+.meal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px var(--color-shadow-dark);
+}
+
+.meal-card-octubre { border-left-color: var(--color-peach); }
+.meal-card-noviembre { border-left-color: var(--color-light-blue); }
+.meal-card-febrero { border-left-color: var(--color-pink); }
+.meal-card-merienda { border-left-color: var(--color-gold); }
+
+body.dark-mode .meal-card-octubre { border-left-color: var(--dm-color-peach); }
+body.dark-mode .meal-card-noviembre { border-left-color: var(--dm-color-light-blue); }
+body.dark-mode .meal-card-febrero { border-left-color: var(--dm-color-pink); }
+body.dark-mode .meal-card-merienda { border-left-color: var(--dm-color-gold); }
+
+.meal-card h3 {
+    color: var(--color-text-dark);
+    font-weight: 700;
+}
+
+.meal-card ul li {
+    color: var(--color-text-light);
+}
+
+.meal-card .font-semibold {
+    color: var(--color-lavender);
+}
+
+/* Headings in results */
+#mealResult h2,
+#meriendasContainer h2 {
+    color: var(--color-dark-purple);
+    border-bottom: 2px solid var(--color-bg-accent);
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    font-size: 1.35rem;
+}
+
+body.dark-mode #mealResult h2,
+body.dark-mode #meriendasContainer h2 {
+    color: var(--dm-color-dark-purple);
+    border-bottom-color: var(--dm-color-border);
+}
+
+#meriendasContainer h3.merienda-plan-title,
+#mealResult h3.merienda-plan-title {
+    color: var(--color-lavender);
+    font-weight: 700;
+    font-size: 1.15rem;
+}
+
+#meriendasContainer h4 {
+    color: var(--color-text-light);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+body.dark-mode #meriendasContainer h3.merienda-plan-title,
+body.dark-mode #mealResult h3.merienda-plan-title {
+    color: var(--dm-color-lavender);
+}
+
+body.dark-mode #meriendasContainer h4 {
+    color: var(--dm-color-text-light);
+}
+
+/* Plan Tags */
+.plan-tag {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.plan-tag-octubre { background-color: var(--color-peach); color: var(--color-plan-tag-octubre-text); }
+.plan-tag-noviembre { background-color: var(--color-light-blue); color: var(--color-plan-tag-noviembre-text); }
+.plan-tag-febrero { background-color: var(--color-pink); color: var(--color-plan-tag-febrero-text); }
+.plan-tag-merienda { background-color: var(--color-gold); color: var(--color-plan-tag-merienda-text); }
+
+body.dark-mode .plan-tag-octubre { background-color: var(--dm-color-peach); color: var(--dm-plan-tag-octubre-text); }
+body.dark-mode .plan-tag-noviembre { background-color: var(--dm-color-light-blue); color: var(--dm-plan-tag-noviembre-text); }
+body.dark-mode .plan-tag-febrero { background-color: var(--dm-color-pink); color: var(--dm-plan-tag-febrero-text); }
+body.dark-mode .plan-tag-merienda { background-color: var(--dm-color-gold); color: var(--dm-plan-tag-merienda-text); }
+
+/* No Results Message */
+.no-results {
+    background-color: var(--color-bg-accent);
+    color: var(--color-text-light);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+body.dark-mode .no-results {
+    background-color: var(--dm-color-bg-light);
+    color: var(--dm-color-text-light);
+}
+
+/* Footer Styles */
+.app-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.875rem;
+    color: var(--color-footer-text);
+    border-top: 1px solid var(--color-bg-accent);
+    margin-top: auto;
+}
+
+body.dark-mode .app-footer {
+    border-top-color: var(--dm-color-border);
+}
+
+.app-footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.app-footer .footer-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-footer .footer-line span,
+.app-footer .footer-line a {
+    margin: 0 0.25rem;
+}
+
+.app-footer a {
+    color: var(--color-footer-link);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.app-footer a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode .app-footer a {
+    color: var(--dm-color-footer-link);
+}
+
+.footer-separator {
+    color: var(--color-footer-separator);
+    margin: 0 0.5rem;
+} 
