@@ -325,40 +325,48 @@ function initializeEventListeners() {
     }
 }
 
+// ===== Helper Functions =====
+
+/**
+ * Sets the default day in the day selector based on the current day of the week.
+ */
+function setDefaultDay() {
+    const today = new Date().getDay(); // 0 for Sunday, 1 for Monday, etc.
+    const dayMapping = [
+        "sunday",   // Sunday
+        "monday",   // Monday
+        "tuesday",  // Tuesday
+        "wednesday",// Wednesday
+        "thursday", // Thursday
+        "friday",   // Friday
+        "saturday"  // Saturday
+    ];
+    const currentDayValue = dayMapping[today];
+    if (DOM.daySelector) {
+        DOM.daySelector.value = currentDayValue;
+    }
+}
+
 // ===== Initialization =====
 
 /**
  * Initializes the application
  */
 function initializeApp() {
-    // Initialize dark mode
     initializeDarkMode();
-
-    // Initialize event listeners
+    setDefaultDay(); // Set default day first
     initializeEventListeners();
-
-    // Set initial meal type button
-    const firstMealButton = DOM.mealTypeButtons.querySelector('button[data-meal="desayuno"]');
-    if (firstMealButton) {
-        firstMealButton.classList.add('active');
-        state.activeMealTypeButton = firstMealButton;
-    } else {
-        DOM.mealResultDiv.innerHTML = `<p class="no-results">Select a day and meal time.</p>`;
+    // Automatically display meals for the default selected day and first meal type (optional)
+    // Or, trigger displayMeals if a meal type is selected by default
+    const initialMealTypeButton = DOM.mealTypeButtons.querySelector('button'); // Or a specific default
+    if (initialMealTypeButton) {
+        // initialMealTypeButton.classList.add('active'); // Uncomment if you want a meal type active by default
+        // state.activeMealTypeButton = initialMealTypeButton; // Uncomment if you want a meal type active by default
     }
-
-    // Set initial merienda filter
-    const defaultMeriendaFilter = DOM.meriendaFilterControls.querySelector('button[data-filter="all"]');
-    if (defaultMeriendaFilter && !state.activeMeriendaFilterButton) {
-        state.activeMeriendaFilterButton = defaultMeriendaFilter;
-    }
-
-    // Initial display
-    if (state.activeMealTypeButton && !DOM.meriendasContainer.classList.contains('hidden')) {
-        displayFilteredMeriendas();
-    } else if (state.activeMealTypeButton) {
-        displayMeals();
-    }
+    displayMeals(); // Display meals for the initially selected day and potentially meal type
+    // Ensure meriendas are hidden initially, unless a specific state dictates otherwise
+    DOM.meriendasContainer.classList.add('hidden'); 
 }
 
-// Start the application when the DOM is fully loaded
+// Initialize the application when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', initializeApp); 

@@ -7,37 +7,37 @@ const allPlansData = {
         planTagClass: "plan-tag-octubre",
         cardClass: "meal-card-octubre",
         data: {
-            lunes: {
+            monday: {
                 desayuno: { name: "HUEVOS PICADOS", items: ["5 claras + 1 lasca de jamón", "90 gr de plátano", "vegetales al gusto"], calories: "No disponible" },
                 almuerzo: { name: "CARNE A LA PLANCHA", items: ["6 onzas de carne a la plancha", "180 gr de papa en cubos con 1 cdta de aceite de oliva", "1 taza de chimol"], calories: "No disponible" },
                 cena: { name: "ATÚN", items: ["1 galleta sanissima", "1 lata de atún en agua", "con limón + sal + 1 cda de yogurt natural", "1/3 taza de elotitos amarillos", "1 taza de pepino, tomate, cebolla y vegetales al gusto"], calories: "No disponible" }
             },
-            martes: {
+            tuesday: {
                 desayuno: { name: "BOWL DE AVENA", items: ["1/3 taza de avena en hojuelas", "1 taza de leche de almendras silk baja en calorías", "1/2 taza de fruta", "1 huevo + 2 claras con vegetales"], calories: "No disponible" },
                 almuerzo: { name: "PASTA DE POLLO", items: ["6 onzas de pollo en tiras", "2/3 taza de pasta", "salsa de tomate natural al gusto"], calories: "No disponible" },
                 cena: { name: "SANDWICH", items: ["2 rebanadas de pan integral", "1 lasca de queso mozzarella", "4 claras", "vegetales al gusto"], calories: "No disponible" }
             },
-            miercoles: {
+            wednesday: {
                 desayuno: { name: "RAPIDITAS DE ESPINACA", items: ["2 tortillas de rapiditas de quinoa", "1/2 taza de espinaca", "2 lascas de jamón de pavo + 1 huevo picado"], calories: "No disponible" },
                 almuerzo: { name: "TORTITAS DE CARNE", items: ["6 onzas de carne molida magra", "salsa de tomate natural", "1/2 taza de quinoa o arroz", "15 gr de aguacate"], calories: "No disponible" },
                 cena: { name: "BOWL MEXICANO", items: ["1 taza de pepino", "1/3 taza de elotitos", "2 huevos duros picados", "1 onza de jamón de pavo", "30 gr de aguacate", "1 galleta sanissima"], calories: "No disponible" }
             },
-            jueves: {
+            thursday: {
                 desayuno: { name: "HUEVOS PICADOS", items: ["5 claras + 1 lasca de jamón", "90 gr de plátano", "vegetales al gusto"], calories: "No disponible" },
                 almuerzo: { name: "POLLO AL LIMÓN", items: ["6 onzas de pollo en tiras + 1 cdta de aceite de oliva con limón y eneldo", "1/2 taza de arroz", "1 taza de zucchini asado"], calories: "No disponible" },
                 cena: { name: "OMELETTE", items: ["2 huevos con 1 lasca de jamón de pavo al gusto", "saltear con 1 cdta de aceite de oliva", "90 gr de plátano salcochado", "tomatada al gusto"], calories: "No disponible" }
             },
-            viernes: {
+            friday: {
                 desayuno: { name: "HUEVOS PICADOS", items: ["5 claras + 1 lasca de jamón", "90 gr de plátano", "vegetales al gusto"], calories: "No disponible" },
                 almuerzo: { name: "PASTA DE POLLO", items: ["6 onzas de pollo en tiras", "2/3 taza de pasta", "usar salsa de tomate natural al gusto"], calories: "No disponible" },
                 cena: { name: "SANDWICH", items: ["2 rebanadas de pan integral", "1 lasca de queso mozzarella", "4 claras", "vegetales al gusto"], calories: "No disponible" }
             },
-            sabado: {
+            saturday: {
                 desayuno: { name: "RAPIDITAS DE ESPINACA", items: ["2 tortillas de rapiditas de quinoa", "1/2 taza de espinaca", "2 lascas de jamón de pavo + 1 huevo picado"], calories: "No disponible" },
                 almuerzo: { name: "LIBRE CON MODERACIÓN", items: ["Disfruta de tu comida preferida con control"], calories: "No disponible" },
                 cena: { name: "BOWL MEXICANO", items: ["1 taza de pepino", "1/3 taza de elotitos", "2 huevos duros picados", "1 onza de jamón de pavo", "30 gr de aguacate", "1 galleta sanissima"], calories: "No disponible" }
             },
-            domingo: {
+            sunday: {
                 desayuno: { name: "BOWL DE AVENA", items: ["1/3 taza de avena en hojuelas", "1 taza de leche de almendras silk baja en calorías", "1/2 taza de fruta", "1 huevo + 2 claras con vegetales"], calories: "No disponible" },
                 almuerzo: { name: "TORTITAS DE PAVO", items: ["6 onzas de carne molida de pavo", "180 gr de papa en puré", "1 taza de vegetales salteados"], calories: "No disponible" },
                 cena: { name: "LIBRE CON MODERACIÓN", items: ["Disfruta de tu comida preferida con control"], calories: "No disponible" }
@@ -61,37 +61,37 @@ const allPlansData = {
         planTagClass: "plan-tag-noviembre",
         cardClass: "meal-card-noviembre",
         data: { 
-            lunes: {
+            monday: {
                 desayuno: { name: "TOSTADA", items: ["1 rebanada de pan integral", "30 gr de aguacate", "2 cucharadas de requesón", "2 huevos duros en rodajas", "tomatada al gusto"], calories: "No disponible" },
                 almuerzo: { name: "TACOS DE CARNE", items: ["6 onzas de carne en tiras", "4 tortillas para tacos", "1 taza de chimol"], calories: "No disponible" },
                 cena: { name: "SANDWICH", items: ["2 rebanadas de pan integral", "1 lasca de queso mozzarella", "4 claras", "vegetales al gusto"], calories: "No disponible" }
             },
-            martes: {
+            tuesday: {
                 desayuno: { name: "BOWL DE AVENA", items: ["1/3 taza de avena en hojuelas", "1 taza de leche de almendras silk baja en calorías", "1/2 taza de fruta", "1 huevo + 2 claras con vegetales"], calories: "No disponible" },
                 almuerzo: { name: "PASTA DE POLLO", items: ["6 onzas de pollo en tiras", "2/3 taza de pasta", "usar salsa de tomate natural al gusto"], calories: "No disponible" },
                 cena: { name: "ATÚN", items: ["1 galleta sanissima", "1 lata de atún en agua", "con limón + sal + 1 cucharada de yogurt natural", "1/3 taza de elotitos amarillos", "1 taza de pepino, tomate, cebolla y vegetales al gusto"], calories: "No disponible" }
             },
-            miercoles: {
+            wednesday: {
                 desayuno: { name: "TÍPICO", items: ["90 gr de plátano salcochado", "1 onza de queso mozzarella o 2 cucharadas de requesón", "2 huevos picados"], calories: "No disponible" },
                 almuerzo: { name: "PICADO DE CARNE", items: ["6 onzas de carne molida magra", "mezclar con 120 gr de papa", "salsa de tomate natural", "1 taza de ensalada fresca", "15 gr de aguacate"], calories: "No disponible" },
                 cena: { name: "PIZZA CASERA", items: ["1 flatbread Joseph's", "vegetales al gusto", "2 lascas de jamón de pavo", "1 onza de queso mozzarella", "1 taza de ensalada fresca con limón y sal"], calories: "No disponible" }
             },
-            jueves: {
+            thursday: {
                 desayuno: { name: "TOSTADA", items: ["1 rebanada de pan integral", "30 gr de aguacate", "2 cucharadas de requesón", "2 huevos duros en rodajas", "tomatada al gusto"], calories: "No disponible" },
                 almuerzo: { name: "POLLO A LA PLANCHA", items: ["6 onzas de pollo a la plancha con mostaza, sal, pimienta", "1/2 taza de arroz", "1 taza de vegetales salteados con 1 cucharadita de aceite de oliva"], calories: "No disponible" },
                 cena: { name: "OMELETTE", items: ["2 huevos con 1 lasca de jamón de pavo al gusto", "saltear con 1 cucharadita de aceite de oliva", "90 gr de plátano salcochado", "tomatada al gusto"], calories: "No disponible" }
             },
-            viernes: {
+            friday: {
                 desayuno: { name: "OMELETTE", items: ["4 claras + 1 lasca de jamón de pavo", "vegetales al gusto o 1/2 taza de hongos", "1 rebanada de pan integral", "15 gr de aguacate"], calories: "No disponible" },
                 almuerzo: { name: "PASTA DE POLLO", items: ["6 onzas de pollo en tiras", "2/3 taza de pasta", "usar salsa de tomate natural al gusto"], calories: "No disponible" },
                 cena: { name: "SANDWICH", items: ["2 rebanadas de pan integral", "1 lasca de queso mozzarella", "4 claras", "vegetales al gusto"], calories: "No disponible" }
             },
-            sabado: {
+            saturday: {
                 desayuno: { name: "RAPIDITAS DE ESPINACA", items: ["2 tortillas de rapiditas de quinoa", "1/2 taza de espinaca", "2 lascas de jamón de pavo + 1 huevo picado"], calories: "No disponible" },
                 almuerzo: { name: "LIBRE CON MODERACIÓN", items: ["Disfruta de tu comida preferida con control"], calories: "No disponible" },
                 cena: { name: "PIZZA CASERA", items: ["1 flatbread Joseph's", "vegetales al gusto", "2 lascas de jamón de pavo", "1 onza de queso mozzarella", "1 taza de ensalada fresca con limón y sal"], calories: "No disponible" }
             },
-            domingo: {
+            sunday: {
                 desayuno: { name: "BOWL DE AVENA", items: ["1/3 taza de avena en hojuelas", "1 taza de leche de almendras silk baja en calorías", "1/2 taza de fruta", "1 huevo + 2 claras con vegetales"], calories: "No disponible" },
                 almuerzo: { name: "TORTITAS DE PAVO", items: ["6 onzas de carne molida de pavo", "180 gr de papa en puré", "1 taza de vegetales salteados"], calories: "No disponible" },
                 cena: { name: "LIBRE CON MODERACIÓN", items: ["Disfruta de tu comida preferida con control"], calories: "No disponible" }
@@ -115,37 +115,37 @@ const allPlansData = {
         planTagClass: "plan-tag-febrero",
         cardClass: "meal-card-febrero",
         data: { 
-            lunes: {
+            monday: {
                 desayuno: { name: "TÍPICO", items: ["1/3 taza de frijoles cocidos", "1 rebanada de pan integral", "2 huevos enteros", "1 manzana pequeña"], calories: "No disponible" },
                 almuerzo: { name: "QUINOA CON VERDURAS ASADAS", items: ["1/2 taza de quinoa cocida", "berenjena, pimientos asados", "espinaca, tomate cherry", "1 onza de queso feta", "vinagreta (1 cdita de aceite de oliva, vinagre balsámico, sal y pimienta)", "4 onzas de pechuga de pollo"], calories: "No disponible" },
                 cena: { name: "TORTILLA DE ESPINACA Y CLARAS", items: ["4 claras de huevo", "1/3 taza de espinacas frescas", "1/3 taza de tofu", "1 cucharadita de aceite", "sal y pimienta al gusto"], calories: "No disponible" }
             },
-            martes: {
+            tuesday: {
                 desayuno: { name: "YOGURT CON GRANOLA Y FRUTA", items: ["150g. De yogurt griego (Pricemark)", "1/3 taza de granola", "6 fresas cortadas en cuadros"], calories: "No disponible" },
                 almuerzo: { name: "BOWL DE QUINOA CON GARBANZOS Y TOFU", items: ["1/2 taza de quinoa cocida", "1/3 taza de garbanzos cocidos", "100 g de tofu en cubos", "zanahoria rallada", "espinacas", "curry, limón"], calories: "No disponible" },
                 cena: { name: "OMELETTE DE ESPINACAS Y CHAMPIÑONES", items: ["3 huevos enteros", "1/2 taza de espinacas frescas", "1 cucharadita de aceite de oliva", "1 rebanada de pan integral"], calories: "No disponible" }
             },
-            miercoles: {
+            wednesday: {
                 desayuno: { name: "CEREAL Y LECHE", items: ["1 taza de leche descremada deslactosada", "2 tazas de corn flakes", "1 guineo pequeño"], calories: "No disponible" },
                 almuerzo: { name: "ENSALADA DE LENTEJAS Y VEGETALES", items: ["1/2 taza de lentejas cocidas", "1/2 taza de zucchini asados", "berenjena asada", "pimientos rojos", "1 cucharadita de semillas de girasol", "6 onzas de salmón a la plancha"], calories: "No disponible" },
                 cena: { name: "SALTEADO DE EDAMAMES Y VEGETALES", items: ["1/2 taza de edamames cocidos", "1/2 taza de tofu", "1/2 taza de brócoli", "1/3 taza de zanahorias", "salsa de soja", "jengibre al gusto"], calories: "No disponible" }
             },
-            jueves: {
+            thursday: {
                 desayuno: { name: "TÍPICO", items: ["1/3 taza de frijoles cocidos", "1 rebanada de pan integral", "1 huevo entero con 1 lasca de jamón de pavo", "1 manzana pequeña"], calories: "No disponible" },
                 almuerzo: { name: "QUINOA CON VERDURAS ASADAS", items: ["1/2 taza de quinoa cocida", "berenjena, pimientos asados", "espinaca, tomate cherry", "1 onza de queso feta", "vinagreta (1 cdita de aceite de oliva, vinagre balsámico, sal y pimienta)", "(Proteína no especificada, añadir según preferencia)"], calories: "No disponible" },
                 cena: { name: "TORTILLA DE ESPINACA Y CLARAS", items: ["4 claras de huevo", "1/3 taza de espinacas frescas", "1/3 taza de tofu", "1 cucharadita de aceite", "sal y pimienta al gusto"], calories: "No disponible" }
             },
-            viernes: {
+            friday: {
                 desayuno: { name: "YOGURT CON GRANOLA Y FRUTA", items: ["150g. De yogurt griego (Pricemark)", "1/3 taza de granola", "6 fresas cortadas en cuadros"], calories: "No disponible" },
                 almuerzo: { name: "BOWL DE QUINOA CON GARBANZOS Y TOFU", items: ["1/2 taza de quinoa cocida", "1/3 taza de garbanzos cocidos", "100 g de tofu en cubos", "zanahoria rallada", "espinacas", "curry, limón"], calories: "No disponible" },
                 cena: { name: "OMELETTE DE ESPINACAS Y CHAMPIÑONES", items: ["3 huevos enteros", "1/2 taza de espinacas frescas", "1 cucharadita de aceite de oliva", "1 rebanada de pan integral"], calories: "No disponible" }
             },
-            sabado: {
+            saturday: {
                 desayuno: { name: "CEREAL Y LECHE", items: ["1 taza de leche descremada deslactosada", "2 tazas de corn flakes", "1 guineo pequeño"], calories: "No disponible" },
                 almuerzo: { name: "ENSALADA DE LENTEJAS Y VEGETALES", items: ["1/2 taza de lentejas cocidas", "1/2 taza de zucchini asados", "berenjena asada", "pimientos rojos", "1 cucharadita de semillas de girasol", "6 onzas de salmón a la plancha"], calories: "No disponible" },
                 cena: { name: "SALTEADO DE EDAMAMES Y VEGETALES", items: ["1/2 taza de edamames cocidos", "1/2 taza de tofu", "1/2 taza de brócoli", "1/3 taza de zanahorias", "salsa de soja", "jengibre al gusto"], calories: "No disponible" }
             },
-            domingo: {
+            sunday: {
                 desayuno: { name: "TOSTADA DE AGUACATE CON HUEVO", items: ["1 rebanada de pan integral", "100g de aguacate", "1 huevo duro"], calories: "No disponible" },
                 almuerzo: { name: "LIBRE CON MODERACIÓN", items: ["Disfruta de tu comida preferida con control"], calories: "No disponible" },
                 cena: { name: "LIBRE CON MODERACIÓN", items: ["Disfruta de tu comida preferida con control"], calories: "No disponible" }
