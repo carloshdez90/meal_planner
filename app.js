@@ -347,6 +347,35 @@ function setDefaultDay() {
     }
 }
 
+/**
+ * Sets the default meal type button based on the current time of day.
+ */
+function setDefaultMealTypeByTime() {
+    const currentHour = new Date().getHours(); // 0-23
+    let defaultMealTypeKey = 'desayuno'; // Por defecto desayuno
+
+    // De 10:00 AM (inclusive) a 1:59 PM (exclusive < 14) -> Almuerzo
+    if (currentHour >= 10 && currentHour < 14) {
+        defaultMealTypeKey = 'almuerzo';
+    } 
+    // De 2:00 PM (inclusive >= 14) hasta medianoche -> Cena
+    else if (currentHour >= 14) { 
+        defaultMealTypeKey = 'cena';
+    }
+    // Para horas 0-9 (medianoche a 9:59 AM), se mantiene 'desayuno'
+
+    // Quita la clase 'active' de cualquier botón de tipo de comida actualmente activo
+    if (state.activeMealTypeButton) {
+        state.activeMealTypeButton.classList.remove('active');
+    }
+
+    const mealTypeButtonToActivate = DOM.mealTypeButtons.querySelector(`button[data-meal="${defaultMealTypeKey}"]`);
+    if (mealTypeButtonToActivate) {
+        mealTypeButtonToActivate.classList.add('active');
+        state.activeMealTypeButton = mealTypeButtonToActivate;
+    }
+}
+
 // ===== Initialization =====
 
 /**
@@ -354,17 +383,12 @@ function setDefaultDay() {
  */
 function initializeApp() {
     initializeDarkMode();
-    setDefaultDay(); // Set default day first
+    setDefaultDay(); // Primero establece el día por defecto
+    setDefaultMealTypeByTime(); // Luego establece el tipo de comida por defecto según la hora
     initializeEventListeners();
-    // Automatically display meals for the default selected day and first meal type (optional)
-    // Or, trigger displayMeals if a meal type is selected by default
-    const initialMealTypeButton = DOM.mealTypeButtons.querySelector('button'); // Or a specific default
-    if (initialMealTypeButton) {
-        // initialMealTypeButton.classList.add('active'); // Uncomment if you want a meal type active by default
-        // state.activeMealTypeButton = initialMealTypeButton; // Uncomment if you want a meal type active by default
-    }
-    displayMeals(); // Display meals for the initially selected day and potentially meal type
-    // Ensure meriendas are hidden initially, unless a specific state dictates otherwise
+    
+    displayMeals(); // Muestra las comidas para el día y tipo de comida inicialmente seleccionados
+    // Asegúrate de que los snacks estén ocultos inicialmente, a menos que un estado específico dicte lo contrario
     DOM.meriendasContainer.classList.add('hidden'); 
 }
 
