@@ -152,20 +152,37 @@ function displayMeals() {
     DOM.mealResultDiv.appendChild(heading);
 
     let mealsFound = false;
+    const mealsMap = new Map(); // Para almacenar comidas únicas
+
     for (const planKey in allPlansData) {
         if (planKey === "meriendasFitAdicionales") continue;
         const plan = allPlansData[planKey];
         const dayData = plan.data[selectedDayValue];
         if (dayData && dayData[selectedMealTypeKey]) {
             const meal = dayData[selectedMealTypeKey];
-            const planDetails = {
-                name: plan.name,
-                planTagClass: plan.planTagClass,
-                cardClass: plan.cardClass
-            };
-            DOM.mealResultDiv.appendChild(createMealCard(meal, planDetails));
-            mealsFound = true;
+            // Crear clave única basada en nombre + ingredientes
+            const mealKey = `${meal.name}|${meal.items.join('|')}`;
+
+            // Solo agregar si no existe (duplicado exacto)
+            if (!mealsMap.has(mealKey)) {
+                mealsMap.set(mealKey, {
+                    meal: meal,
+                    planDetails: {
+                        name: plan.name,
+                        planTagClass: plan.planTagClass,
+                        cardClass: plan.cardClass
+                    }
+                });
+            }
         }
+    }
+
+    // Mostrar las comidas únicas
+    if (mealsMap.size > 0) {
+        mealsMap.forEach(({ meal, planDetails }) => {
+            DOM.mealResultDiv.appendChild(createMealCard(meal, planDetails));
+        });
+        mealsFound = true;
     }
 
     if (!mealsFound) {
@@ -187,7 +204,7 @@ function displayFilteredMeriendas() {
     let meriendasFound = false;
 
     // Display regular meal plan snacks
-    ["octubre2024", "noviembre2024", "febrero2025"].forEach(planKey => {
+    ["octubre2024", "noviembre2024", "febrero2025", "agosto2025", "ia1", "ia2"].forEach(planKey => {
         const plan = allPlansData[planKey];
         if (!plan || !plan.data) return;
         
